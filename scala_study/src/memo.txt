@@ -1,0 +1,7 @@
+2803955
+
+consumerKey = "PXstu9lHsgTlQ9bDuSbDQ" 
+consumerSecret = "RbXcJDt5MsbVnHxDxWbRmZ7MPRJ3atPVZmEAS3c7mE" 
+UserId=95870366
+Token=95870366-41fsWZsj1XF8zOlYAJJ8V1FUX3rPXIOcKevW74eTC
+TokenSecret=cljUVWlcwtnF67V05dUlPKg3BWZxjvvQA80pgP0NrY
