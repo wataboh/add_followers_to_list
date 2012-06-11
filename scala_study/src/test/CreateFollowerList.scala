@@ -24,8 +24,8 @@ class CreateFollowerList {
     val consumerSecret = "RbXcJDt5MsbVnHxDxWbRmZ7MPRJ3atPVZmEAS3c7mE"; // Consumer secret をセット
     
     // TwitterOAuthAccessTokenGetter で取得した Token と TokenSecret を使用
-    val token = "95870366-41fsWZsj1XF8zOlYAJJ8V1FUX3rPXIOcKevW74eTC"; // Token をセット
-    val tokenSecret = "cljUVWlcwtnF67V05dUlPKg3BWZxjvvQA80pgP0NrY"; // TokenSecret をセット
+    val token = "95870366-aAhuCI9Cw52ajE2F5vp4ovgrMdUX2CI4xfjKzA"; // Token をセット
+    val tokenSecret = "ju5YNWK2v5917lE2HTr9P50v6aDVC5ELknLjHA"; // TokenSecret をセット
     
         
     // Twitterオブジェクトを生成
@@ -40,7 +40,7 @@ class CreateFollowerList {
         val followersIds:IDs = twitter.getFollowersIDs("wataboh",cursor)
 
         // リスト作成 true：公開リスト false：非公開リスト
-      val createdList = twitter.createUserList("test", true, "test");
+      val createdList = twitter.createUserList("privatelist", false, "test");
 
         val createdListId = createdList.getId();
         for (each <- followersIds.getIDs()) {

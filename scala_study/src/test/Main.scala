@@ -12,8 +12,8 @@ object Main {
 	  tweet.oauthTest
 	  
 
-//	  val c = new CreateFollowerList
-//	  c.makeList
+	  val c = new CreateFollowerList
+	  c.makeList
 	  
 	 
 	  
