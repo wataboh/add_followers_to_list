@@ -7,6 +7,8 @@ import twitter4j.TwitterFactory
 import twitter4j.UserList
 import twitter4j.auth.AccessToken
 
+import scala.collection.JavaConversions._
+
 
 class CreateFollowerList {
 
@@ -35,18 +37,38 @@ class CreateFollowerList {
     twitter.setOAuthConsumer(consumerKey, consumerSecret)
     twitter.setOAuthAccessToken(accessToken)
 
-    val cursor:Long = -1
+    var cursor:Long = -1
         // フォロワーのIDを取得
         val followersIds:IDs = twitter.getFollowersIDs("wataboh",cursor)
 
-        // リスト作成 true：公開リスト false：非公開リスト
-      val createdList = twitter.createUserList("privatelist", false, "test");
+        
+    val lists = twitter.getUserLists("wataboh",cursor)
 
-        val createdListId = createdList.getId();
-        for (each <- followersIds.getIDs()) {
-           twitter.addUserListMember(createdListId, each);
-            System.out.println(each);
-        }
+    var testlist:UserList = null
+    
+    for(each <- lists){
+    	printf("%s\n",each)
+    	if(each.getId() == 72087192){
+    		testlist = each
+    		each.getId()
+    		printf("test\n")
+    	}
+    }
+    
+    val userList = twitter.getUserListMembers(72087192,cursor)
+    for(each <- userList){
+      printf("%s\n", each.getName())
+    }
+
+    
+        // リスト作成 true：公開リスト false：非公開リスト
+//      val createdList = twitter.createUserList("privatelist", false, "test");
+
+//        val createdListId = createdList.getId();
+//        for (each <- followersIds.getIDs()) {
+//           twitter.addUserListMember(createdListId, each);
+//            System.out.println(each);
+//        }
         // 残りのAPIリクエスト数を表示
         System.out.println(twitter.getRateLimitStatus().getRemainingHits());
     }
