@@ -8,17 +8,16 @@ object Main {
 //OAuthのためのプロセス
 //	  val t = new TwitterOAuthAccessTokenGetter()
 //	  t.operate()
-	  val tweet = new TwitterOAuthSampleWithAccessToken()
-	  tweet.oauthTest
+//	  val tweet = new TwitterOAuthSampleWithAccessToken()
+//	  tweet.oauthTest
 	  
 
-//	  val c = new CreateFollowerList
-//	  c.makeList
+	  val c = new CreateFollowerList
+	  c.makeList
 	  
 	 
 	  
 	  
 	 }
 
-	  
 }

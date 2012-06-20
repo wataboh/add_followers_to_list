@@ -26,7 +26,7 @@ class TwitterOAuthSampleWithAccessToken {
    twitter.setOAuthConsumer(consumerKey, consumerSecret)
    twitter.setOAuthAccessToken(accessToken)
    
-   twitter.updateStatus("testtest")
+   //twitter.updateStatus("testtest")
  
    // ツイートを出力するサンプル
     val statusList = twitter.getDirectMessages()
