@@ -58,20 +58,27 @@ class CreateFollowerList {
       for (each <- tempUserList) {
         userListBuffer.append(each.getId())
       }
-      
+
       cursor = tempUserList.getNextCursor() //次のcursorを取得
 //      } while ( 0 != 0)
     } while (cursor != 0);
-    
+
     for(each <- userListBuffer) printf("%d\n",each)
     for(each <- followersIds.getIDs()) printf("%d\n",each.toLong)
-    
+
     //リストのチェック
-    //フォローしているが、ユーザリストに入っていないもの
+    //フォローされているが、ユーザリストに入っていないもの
     for(each <- followersIds.getIDs()){
-      if(userListBuffer.exists(_ != each)) print("%d ",each.toLong)
+      if(userListBuffer.exists(_ != each)) printf("%d ",each.toLong)
     }
-    
+
+    printf("\n%d\n%d\n",followersIds.getIDs().length,userListBuffer.length)
+    //ユーザリストに入っているがフォローされていないもの
+    for(each <- userListBuffer){
+      if(followersIds.getIDs().exists(_ != each)) print("%d ",each.toLong)
+    }
+
+    //どうも比較が全くうまくいっていないみたいだ．
 
     // リスト作成 true：公開リスト false：非公開リスト
     //      val createdList = twitter.createUserList("privatelist", false, "test");
