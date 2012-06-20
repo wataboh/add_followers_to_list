@@ -1,4 +1,4 @@
-package test
+package info.wataboh
 
 import java.io._
 import twitter4j._

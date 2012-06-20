@@ -1,4 +1,4 @@
-package test
+package info.wataboh
 
 object Main {
 	

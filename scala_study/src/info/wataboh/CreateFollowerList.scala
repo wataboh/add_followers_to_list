@@ -1,4 +1,4 @@
-package test
+package info.wataboh
 
 
 import twitter4j.IDs
